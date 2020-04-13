@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Web Development Roadmap by Camilo Lucena</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <h1>Calculator</h1>
 <div style="">
     <div class="container">
-        <h2 id="paragraph"class="title">0</h2>
+        <h2 class="title" id="paragraph">0</h2>
         <input id="input-form" type="text">
-        <button>Add</button>
-        <button>Add one</button>
-        <button id="clear">Clear</button>
-        <span id="success" class="hidden"></span>
+        <button onclick="add()" type="button">Add</button>
+        <button autofocus onclick="addOne()" type="button">Add one</button>
+        <button id="clear" onclick="clearScreen()" type="button">Clear</button>
+        <span class="hidden" id="success"></span>
     </div>
 </div>
 </body>
 <script>
-    alert('Hello')
+    function add() {
+        console.log('Add')
+    }
+
+    function addOne() {
+        console.log('Add One')
+    }
+
+    function clearScreen() {
+        console.log('Clear Screen')
+    }
 </script>
 </html>

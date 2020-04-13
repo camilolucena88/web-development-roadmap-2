@@ -30,6 +30,7 @@ button{
     background: #FE5F55;
     color: #fafafa;
     border-radius: 5px;
+    cursor: pointer;
 }
 input{
     padding: 10px;
