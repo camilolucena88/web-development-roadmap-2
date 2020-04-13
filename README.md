@@ -1,4 +1,4 @@
-# web-development-roadmap-2
+# Web Development Roadmap - Module 2
 Examples for the Web Development Roadmap - Second Module
 
 There are 4 examples for the first Module, all based on HTML,CSS & JS.
