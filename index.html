@@ -11,7 +11,7 @@
     <div class="container">
         <h2 class="title" id="paragraph">0</h2>
         <input id="input-form" type="text">
-        <button onclick="add()" type="button">Add</button>
+        <button onclick="getValueFromInput()" type="button">Add</button>
         <button autofocus onclick="addOne()" type="button">Add one</button>
         <button id="clear" onclick="clearScreen()" type="button">Clear</button>
         <span class="hidden" id="success"></span>
@@ -19,16 +19,39 @@
 </div>
 </body>
 <script>
-    function add() {
-        console.log('Add')
+    function addOne(){
+        let domValue = document.getElementById("paragraph").innerText;
+        this.sum(domValue);
+        this.showResponse("Successfully added");
+    }
+    function showResponse(value) {
+        document.getElementById("success").innerText = value;
+        this.state("show");
+        setTimeout(state,1000,"hidden");
     }
 
-    function addOne() {
-        console.log('Add One')
+    function state(status) {
+        document.getElementById("success").className = status;
     }
-
+    function sum(value) {
+        let newValue =  parseInt(value) + 1;
+        console.log(newValue)
+        document.getElementById("paragraph").innerText = newValue;
+    }
     function clearScreen() {
-        console.log('Clear Screen')
+        document.getElementById("paragraph").innerText = "0";
+    }
+    function getValueFromInput() {
+        if(document.getElementById("input-form").value.length == 0){
+            this.showResponse("Failed. Add a value");
+            return false;
+        }
+        this.add(document.getElementById("input-form").value);
+    }
+    function add(value) {
+        let domValue = document.getElementById("paragraph").innerText;
+        let newValue =  parseInt(value) + parseInt(domValue);
+        document.getElementById("paragraph").innerText = newValue;
     }
 </script>
 </html>
